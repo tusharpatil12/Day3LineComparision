@@ -8,7 +8,7 @@ public class LineComparision {
 		System.out.println(Line);
 		return Line;
 	}
-	static void equalOrNotCheck(double lengthline1, double lengthline2){
+	static double equalOrNotCheck(double lengthline1, double lengthline2){
 
 		int d1= (int) (lengthline1);
 		int d2= (int) (lengthline2);
@@ -16,22 +16,25 @@ public class LineComparision {
 			System.out.println("Line 1 and Line 2 have equal Length.");
 		else
 			System.out.println("Line 1 and Line 2 have do not have equal length.");
+		return lengthline1;
 	}
-	static void compareTo(double lengthLine1, double lengthLine2){
+
+	static double compareTo(double lengthLine1, double lengthLine2){
 
 		Double d3 = lengthLine1;
 		Double d4 = lengthLine2;
-		System.out.println("print the length ="+d3);
-		System.out.println("print the length ="+d4);
+		System.out.println("print the length ="+ d3);
+		System.out.println("print the length ="+ d4);
 
 		int value = d3.compareTo(d4);
 		if(value > 0){
-			System.out.println("the length are greater");
+			System.out.println("The length are greater");
 		} else if (value < 0) {
-			System.out.println("the length are lesser");
+			System.out.println("The length are lesser");
 		}else {
-			System.out.println(" the length are equals");
+			System.out.println(" The length are equals");
 		}
+		return lengthLine1;
 
 	}
 
@@ -41,6 +44,17 @@ public class LineComparision {
 		double length2 =  length(1,2,5,4);
 		equalOrNotCheck(length1, length2);
 		compareTo(length1,length2);
+
+		Line ref = new Line();
+
+		ref.setLength3(length1);
+		ref.setLength4(length2);
+
+		System.out.println(ref.getLength3());
+		System.out.println(ref.getLength4());
+
+		ref.setLength3(equalOrNotCheck(length1,length2));
+		ref.setLength3(compareTo(length1,length2));
 
 	}
 
